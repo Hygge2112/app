@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "131134121982",
+    "project_id": "growremind-1b8e3",
+    "storage_bucket": "growremind-1b8e3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:131134121982:android:129f77752a7f28d5bb82af",
+        "android_client_info": {
+          "package_name": "com.example.growreminder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "131134121982-ubkrspieov54s3o1vradbr9fo099u51h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.growreminder",
+            "certificate_hash": "3cacb5a756eb165f21e055e3544e21fb12b5f83b"
+          }
+        },
+        {
+          "client_id": "131134121982-844ff22fvrtn04gr79rff3d4cjboh0dr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCk0jlNAem6T8EFPBO6BFcqPWXsDxN-C64"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "131134121982-844ff22fvrtn04gr79rff3d4cjboh0dr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
