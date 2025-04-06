@@ -61,11 +61,22 @@ fun ScheduleScreen(navController: NavController) {
         }
     }
 
-    val timeSlots = listOf(
-        "09:00 AM", "09:30 AM", "10:00 AM", "10:30 AM",
-        "12:00 PM", "12:30 PM", "01:30 PM", "02:00 AM",
-        "03:00 PM", "04:30 PM", "05:00 PM", "05:30 AM"
+    // 👇 Toggle AM/PM
+    val isAM = remember { mutableStateOf(true) }
+
+    val amTimeSlots = listOf(
+        "01:00 AM", "02:00 AM", "03:00 AM", "04:00 AM",
+        "05:00 AM", "06:00 AM", "07:00 AM", "08:00 AM",
+        "09:00 AM", "10:00 AM", "11:00 AM", "12:00 AM"
     )
+
+    val pmTimeSlots = listOf(
+        "01:00 PM", "02:00 PM", "03:00 PM", "04:00 PM",
+        "05:00 PM", "06:00 PM", "07:00 PM", "08:00 PM",
+        "09:00 PM", "10:00 PM", "11:00 PM", "12:00 PM"
+    )
+
+    val displayedSlots = if (isAM.value) amTimeSlots else pmTimeSlots
 
     Column(
         modifier = Modifier
@@ -136,15 +147,51 @@ fun ScheduleScreen(navController: NavController) {
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        // ⏰ Các khung giờ
-        Text("Available Time", style = MaterialTheme.typography.titleMedium)
+        // ⏰ "Available Time" + AM/PM Toggle cùng hàng
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = 8.dp),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                "Available Time",
+                style = MaterialTheme.typography.titleMedium
+            )
+            Row {
+                Button(
+                    onClick = { isAM.value = true },
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = if (isAM.value) MaterialTheme.colorScheme.primary else Color.LightGray
+                    ),
+                    contentPadding = PaddingValues(horizontal = 12.dp)
+                ) {
+                    Text("AM", color = if (isAM.value) Color.White else Color.Black)
+                }
+
+                Spacer(modifier = Modifier.width(8.dp))
+
+                Button(
+                    onClick = { isAM.value = false },
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = if (!isAM.value) MaterialTheme.colorScheme.primary else Color.LightGray
+                    ),
+                    contentPadding = PaddingValues(horizontal = 12.dp)
+                ) {
+                    Text("PM", color = if (!isAM.value) Color.White else Color.Black)
+                }
+            }
+        }
+
         Spacer(modifier = Modifier.height(12.dp))
 
+        // ⏰ Các khung giờ
         FlowRow(
             mainAxisSpacing = 12.dp,
             crossAxisSpacing = 12.dp
         ) {
-            timeSlots.forEach { time ->
+            displayedSlots.forEach { time ->
                 val isNow = time == nowFormatted
                 val isSelected = selectedTime.value == time
                 val background = when {
