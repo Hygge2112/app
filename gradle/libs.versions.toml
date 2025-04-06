@@ -1,7 +1,9 @@
 [versions]
+accompanistFlowlayout = "0.34.0"
 agp = "8.8.2"
 coilCompose = "2.4.0"
 converterGson = "2.9.0"
+foundationLayout = "1.7.8"
 kotlin = "2.0.0"
 coreKtx = "1.15.0"
 junit = "4.13.2"
@@ -12,6 +14,8 @@ lifecycleRuntimeKtx = "2.8.7"
 activityCompose = "1.10.1"
 composeBom = "2025.03.00"
 lifecycleViewmodelKtx = "2.6.2"
+material3 = "1.3.1"
+materialIconsExtended = "1.7.8"
 navigationCompose = "2.8.9"
 retrofit = "2.9.0"
 okhttp = "4.9.3"
@@ -21,8 +25,13 @@ credentials = "1.5.0"
 credentialsPlayServicesAuth = "1.5.0"
 googleid = "1.1.1"
 firebaseAnalytics = "22.4.0"
+ui = "1.7.8"
 [libraries]
+accompanist-flowlayout = { module = "com.google.accompanist:accompanist-flowlayout", version.ref = "accompanistFlowlayout" }
+androidx-foundation-layout = { module = "androidx.compose.foundation:foundation-layout", version.ref = "foundationLayout" }
+androidx-material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "materialIconsExtended" }
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
+material3 = { module = "androidx.compose.material3:material3", version.ref = "material3" }
 okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
@@ -49,6 +58,7 @@ androidx-credentials-play-services-auth = { group = "androidx.credentials", name
 googleid = { group = "com.google.android.libraries.identity.googleid", name = "googleid", version.ref = "googleid" }
 firebase-analytics-ktx = { group = "com.google.firebase", name = "firebase-analytics-ktx", version = "22.0.0" }
 firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics", version.ref = "firebaseAnalytics" }
+ui = { module = "androidx.compose.ui:ui", version.ref = "ui" }
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

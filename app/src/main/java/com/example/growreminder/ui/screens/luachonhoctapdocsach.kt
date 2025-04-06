@@ -81,7 +81,12 @@ fun ChoiceCard(text: String, navController: NavController) {
         modifier = Modifier
             .size(180.dp)
             .background(Color.White, shape = RoundedCornerShape(16.dp))
-            .clickable { navController.navigate("destinationScreen") }
+            .clickable {
+                when (text) {
+                    "Đọc sách" -> navController.navigate("schedule")
+                    else -> navController.navigate("destinationScreen")
+                }
+            }
             .padding(16.dp),
         contentAlignment = Alignment.Center
     ) {

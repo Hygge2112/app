@@ -14,6 +14,7 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.*
 import com.example.growreminder.ui.screens.AuthScreen
 import com.example.growreminder.ui.screens.PersonalDevelopmentScreen
+import com.example.growreminder.ui.screens.ScheduleScreen
 import com.example.growreminder.ui.screens.StudyChoiceScreen
 import com.example.growreminder.ui.theme.GrowReminderTheme
 
@@ -31,11 +32,23 @@ class MainActivity : ComponentActivity() {
                         startDestination = "personalDevelopment",
                         modifier = Modifier
                             .fillMaxSize()
-                            .padding(innerPadding) // Thêm dòng này để sử dụng innerPadding
+                            .padding(innerPadding)
                     ) {
-                        composable("personalDevelopment") { PersonalDevelopmentScreen(navController) }
-                        composable("studyChoice") { StudyChoiceScreen(navController) }
-                        composable("authScreen") { AuthScreen() }  // Nếu có màn hình đăng nhập
+                        composable("personalDevelopment") {
+                            PersonalDevelopmentScreen(navController)
+                        }
+
+                        composable("studyChoice") {
+                            StudyChoiceScreen(navController)
+                        }
+
+                        composable("authScreen") {
+                            AuthScreen()
+                        }
+
+                        composable("schedule") {
+                            ScheduleScreen(navController)
+                        }
                     }
                 }
             }

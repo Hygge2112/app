@@ -71,4 +71,9 @@ dependencies {
     implementation(libs.kotlinx.coroutines.android) // Coroutines
     implementation(libs.okhttp.logging) // OkHttp Logging Interceptor}
     implementation (libs.firebase.analytics.ktx)
+    implementation(libs.ui)
+    implementation(libs.material3)
+    implementation(libs.androidx.foundation.layout)
+    implementation(libs.androidx.material.icons.extended)
+    implementation(libs.accompanist.flowlayout)
 }
