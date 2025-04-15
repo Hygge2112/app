@@ -84,7 +84,7 @@ fun ChoiceCard(text: String, navController: NavController) {
             .clickable {
                 when (text) {
                     "Đọc sách" -> navController.navigate("schedule")
-                    else -> navController.navigate("destinationScreen")
+                    else -> navController.navigate("schedule")
                 }
             }
             .padding(16.dp),
